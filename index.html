@@ -102,7 +102,7 @@ footer{background:#0b1a12;color:#cfe3d6;padding:30px 0 80px;font-size:14px}foote
 <div class="dr" id="adm" style="width:min(720px,100%)"><div class="dh">🔐 Admin Panel<button class="ib" onclick="cl()">✕</button></div><div class="db" id="mb"></div></div>
 
 <script>
-var CATS=["All","Protein","Gainers","Vitamins","Pre/Post Workout","Health Foods"];
+var CATS=["All","Protein","Gainers","Vitamins","Pre/Post Workout","Fat Loss","Recovery","Health Foods"];
 var DEF=[
 {n:"Whey Protein 1kg",c:"Protein",p:2499,m:3199,e:"🥛",t:"Best Seller",b:"#dcfce7"},
 {n:"Whey Isolate 1kg",c:"Protein",p:3899,m:4799,e:"💪",t:"Premium",b:"#e0f2fe"},
@@ -119,9 +119,38 @@ var DEF=[
 {n:"Oats 1kg",c:"Health Foods",p:189,m:249,e:"🌾",t:"",b:"#ecfccb"},
 {n:"Green Tea 100 Bags",c:"Health Foods",p:299,m:399,e:"🍵",t:"",b:"#d1fae5"},
 {n:"Protein Bars (Box of 6)",c:"Health Foods",p:599,m:749,e:"🍫",t:"New",b:"#fecaca"},
-{n:"Shaker Bottle 700ml",c:"Pre/Post Workout",p:249,m:399,e:"🥤",t:"",b:"#e2e8f0"}];
+{n:"Shaker Bottle 700ml",c:"Pre/Post Workout",p:249,m:399,e:"🥤",t:"",b:"#e2e8f0"},
+{n:"Whey Concentrate 2kg",c:"Protein",p:4299,m:5499,e:"🥛",t:"Value",b:"#dcfce7"},
+{n:"Whey Hydrolysed 1kg",c:"Protein",p:4499,m:5599,e:"⚡",t:"Premium",b:"#e0f2fe"},
+{n:"Casein Protein 1kg",c:"Protein",p:3299,m:4199,e:"🌙",t:"Night",b:"#ede9fe"},
+{n:"Egg White Protein 500g",c:"Protein",p:1899,m:2399,e:"🥚",t:"",b:"#fef3c7"},
+{n:"Whey Blend 2kg",c:"Protein",p:3699,m:4699,e:"💪",t:"",b:"#fed7aa"},
+{n:"Soy Protein 1kg",c:"Protein",p:1299,m:1699,e:"🫘",t:"Vegan",b:"#ecfccb"},
+{n:"Raw Whey 1kg",c:"Protein",p:1899,m:2399,e:"🥄",t:"",b:"#f1f5f9"},
+{n:"Women's Protein 500g",c:"Protein",p:1699,m:2199,e:"👩",t:"Women",b:"#fce7f3"},
+{n:"Mass Gainer 6kg",c:"Gainers",p:3999,m:5199,e:"🏋️",t:"Thin Body",b:"#fed7aa"},
+{n:"Weight Gainer 2kg",c:"Gainers",p:1499,m:1899,e:"🍌",t:"Thin Body",b:"#fef9c3"},
+{n:"Ayurvedic Weight Gain Powder 500g",c:"Gainers",p:449,m:599,e:"🌿",t:"",b:"#d1fae5"},
+{n:"Dry Fruit Gainer Mix 1kg",c:"Gainers",p:699,m:899,e:"🥜",t:"",b:"#fde68a"},
+{n:"EAA 300g",c:"Pre/Post Workout",p:1499,m:1999,e:"💧",t:"",b:"#cffafe"},
+{n:"Glutamine 250g",c:"Pre/Post Workout",p:899,m:1199,e:"🧪",t:"",b:"#e0f2fe"},
+{n:"Citrulline Malate 250g",c:"Pre/Post Workout",p:1099,m:1499,e:"🔥",t:"",b:"#fee2e2"},
+{n:"Energy & Electrolyte Mix 500g",c:"Pre/Post Workout",p:449,m:599,e:"🍊",t:"",b:"#ffedd5"},
+{n:"Fat Burner 60 Caps",c:"Fat Loss",p:1299,m:1799,e:"🔥",t:"Hot",b:"#fee2e2"},
+{n:"L-Carnitine Liquid 450ml",c:"Fat Loss",p:999,m:1399,e:"🍋",t:"",b:"#fef9c3"},
+{n:"CLA 90 Softgels",c:"Fat Loss",p:1199,m:1599,e:"💊",t:"",b:"#fce7f3"},
+{n:"Diet Whey Protein 1kg",c:"Fat Loss",p:2999,m:3799,e:"🥗",t:"Diet",b:"#dcfce7"},
+{n:"Apple Cider Vinegar 500ml",c:"Fat Loss",p:349,m:499,e:"🍎",t:"",b:"#fecaca"},
+{n:"ZMA 90 Caps",c:"Recovery",p:799,m:1099,e:"😴",t:"",b:"#ede9fe"},
+{n:"Ashwagandha 60 Caps",c:"Recovery",p:499,m:699,e:"🌱",t:"",b:"#ecfccb"},
+{n:"Magnesium Glycinate 60 Tabs",c:"Recovery",p:599,m:849,e:"💎",t:"",b:"#e0f2fe"},
+{n:"Glucosamine Joint Support",c:"Recovery",p:899,m:1199,e:"🦴",t:"",b:"#f1f5f9"},
+{n:"Sattu Protein Mix 500g",c:"Health Foods",p:179,m:249,e:"🌾",t:"",b:"#fef3c7"},
+{n:"Chia Seeds 250g",c:"Health Foods",p:249,m:349,e:"🌰",t:"",b:"#e2e8f0"},
+{n:"Roasted Makhana 250g",c:"Health Foods",p:199,m:249,e:"🍿",t:"",b:"#fef9c3"}];
 function ld(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var VER=2;if(ld("an_v",0)<VER){try{localStorage.removeItem("an_p");localStorage.removeItem("an_c")}catch(e){}sv("an_v",VER)}
 var P=ld("an_p",DEF),C=ld("an_c",{}),O=ld("an_o",[]),U=ld("an_u",null),ct="All",adm=false;
 function $(i){return document.getElementById(i)}
 function ts(m){var t=$("ts");t.textContent=m;t.style.display="block";setTimeout(function(){t.style.display="none"},1800)}
@@ -161,6 +190,13 @@ var TR={
 "Add to Cart":"कार्टमध्ये टाका|कार्ट में डालें",
 "Best Seller":"बेस्ट सेलर","Premium":"प्रीमियम","Vegan":"व्हेगन|वीगन","Hot":"हॉट","Popular":"लोकप्रिय","New":"नवीन|नया",
 "Whey Protein 1kg":"व्हे प्रोटीन १ किलो|व्हे प्रोटीन 1 किलो","Whey Isolate 1kg":"व्हे आयसोलेट १ किलो|व्हे आइसोलेट 1 किलो","Plant Protein 500g":"प्लांट प्रोटीन ५०० ग्रॅम|प्लांट प्रोटीन 500 ग्राम","Mass Gainer 3kg":"मास गेनर ३ किलो|मास गेनर 3 किलो","Weight Gainer 1kg":"वेट गेनर १ किलो|वेट गेनर 1 किलो","Multivitamin 60 Tabs":"मल्टीव्हिटॅमिन ६० गोळ्या|मल्टीविटामिन 60 टैबलेट","Omega-3 Fish Oil":"ओमेगा-३ फिश ऑइल|ओमेगा-3 फिश ऑयल","Vitamin D3 + K2":"व्हिटॅमिन D3 + K2|विटामिन D3 + K2","Creatine Monohydrate 250g":"क्रिएटिन मोनोहायड्रेट २५० ग्रॅम|क्रिएटिन मोनोहाइड्रेट 250 ग्राम","Pre-Workout 300g":"प्री-वर्कआउट ३०० ग्रॅम|प्री-वर्कआउट 300 ग्राम","BCAA 250g":"बीसीएए २५० ग्रॅम|बीसीएए 250 ग्राम","Peanut Butter 1kg":"पीनट बटर १ किलो|पीनट बटर 1 किलो","Oats 1kg":"ओट्स १ किलो|ओट्स 1 किलो","Green Tea 100 Bags":"ग्रीन टी १०० बॅग्स|ग्रीन टी 100 बैग","Protein Bars (Box of 6)":"प्रोटीन बार (६ चा बॉक्स)|प्रोटीन बार (6 का बॉक्स)","Shaker Bottle 700ml":"शेकर बॉटल ७०० मिली|शेकर बोतल 700 मिली",
+"Fat Loss":"फॅट लॉस|फैट लॉस","Recovery":"रिकव्हरी|रिकवरी","Value":"बचत","Thin Body":"बारीक शरीरासाठी|पतले शरीर के लिए","Night":"रात्री|रात के लिए","Diet":"डाएट","Women":"महिलांसाठी|महिलाओं के लिए",
+"Whey Concentrate 2kg":"व्हे कॉन्सन्ट्रेट 2 किलो","Whey Hydrolysed 1kg":"व्हे हायड्रोलाइज्ड 1 किलो","Casein Protein 1kg":"केसीन प्रोटीन 1 किलो","Egg White Protein 500g":"एग व्हाइट प्रोटीन 500 ग्रॅम|एग व्हाइट प्रोटीन 500 ग्राम","Whey Blend 2kg":"व्हे ब्लेंड 2 किलो","Soy Protein 1kg":"सोया प्रोटीन 1 किलो","Raw Whey 1kg":"रॉ व्हे 1 किलो","Women's Protein 500g":"महिलांसाठी प्रोटीन 500 ग्रॅम|महिलाओं के लिए प्रोटीन 500 ग्राम",
+"Mass Gainer 6kg":"मास गेनर 6 किलो","Weight Gainer 2kg":"वेट गेनर 2 किलो","Ayurvedic Weight Gain Powder 500g":"आयुर्वेदिक वजन वाढ पावडर 500 ग्रॅम|आयुर्वेदिक वज़न बढ़ाने वाला पाउडर 500 ग्राम","Dry Fruit Gainer Mix 1kg":"ड्रायफ्रूट गेनर मिक्स 1 किलो",
+"EAA 300g":"ईएए 300 ग्रॅम|ईएए 300 ग्राम","Glutamine 250g":"ग्लूटामाइन 250 ग्रॅम|ग्लूटामाइन 250 ग्राम","Citrulline Malate 250g":"सिट्रुलिन मॅलेट 250 ग्रॅम|सिट्रुलिन मैलेट 250 ग्राम","Energy & Electrolyte Mix 500g":"एनर्जी व इलेक्ट्रोलाइट मिक्स 500 ग्रॅम|एनर्जी और इलेक्ट्रोलाइट मिक्स 500 ग्राम",
+"Fat Burner 60 Caps":"फॅट बर्नर 60 कॅप्स|फैट बर्नर 60 कैप्स","L-Carnitine Liquid 450ml":"एल-कार्निटीन लिक्विड 450 मिली","CLA 90 Softgels":"सीएलए 90 सॉफ्टजेल्स|सीएलए 90 सॉफ्टजेल","Diet Whey Protein 1kg":"डाएट व्हे प्रोटीन 1 किलो","Apple Cider Vinegar 500ml":"ॲपल सायडर व्हिनेगर 500 मिली|ऐपल साइडर विनेगर 500 मिली",
+"ZMA 90 Caps":"झेडएमए 90 कॅप्स|ज़ेडएमए 90 कैप्स","Ashwagandha 60 Caps":"अश्वगंधा 60 कॅप्स|अश्वगंधा 60 कैप्स","Magnesium Glycinate 60 Tabs":"मॅग्नेशियम ग्लायसिनेट 60 गोळ्या|मैग्नीशियम ग्लाइसिनेट 60 टैबलेट","Glucosamine Joint Support":"ग्लुकोसामाइन जॉइंट सपोर्ट|ग्लूकोसामाइन जॉइंट सपोर्ट",
+"Sattu Protein Mix 500g":"सत्तू प्रोटीन मिक्स 500 ग्रॅम|सत्तू प्रोटीन मिक्स 500 ग्राम","Chia Seeds 250g":"चिया सीड्स 250 ग्रॅम|चिया सीड्स 250 ग्राम","Roasted Makhana 250g":"भाजलेला मखाना 250 ग्रॅम|भुना मखाना 250 ग्राम",
 "Why All Nutrition?":"ऑल न्यूट्रिशनच का?|ऑल न्यूट्रिशन ही क्यों?","Trusted nutrition store for fitness lovers & families":"फिटनेस प्रेमी आणि कुटुंबांसाठी विश्वासू न्यूट्रिशन स्टोअर|फिटनेस प्रेमियों और परिवारों के लिए भरोसेमंद न्यूट्रिशन स्टोर",
 "Authentic Products":"अस्सल प्रोडक्ट्स|असली प्रोडक्ट्स","Sealed, batch-verified supplements from trusted brands.":"विश्वासू ब्रँड्सचे सीलबंद, बॅच-तपासलेले सप्लिमेंट्स.|भरोसेमंद ब्रांड्स के सीलबंद, बैच-जांचे सप्लीमेंट्स.",
 "Free Diet Advice":"मोफत डाएट सल्ला|मुफ़्त डाइट सलाह","Get simple guidance on protein, weight gain & weight loss.":"प्रोटीन, वजन वाढवणे व कमी करणे यावर सोपे मार्गदर्शन मिळवा.|प्रोटीन, वज़न बढ़ाने और घटाने पर आसान सलाह पाएं.",
