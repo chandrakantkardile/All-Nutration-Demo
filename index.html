@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All Nutrition – Georai, Newasa</title>
+<style>
+:root{--bg:#fff;--bg2:#f4f7f2;--tx:#14201a;--mu:#5c6b62;--pr:#16a34a;--pr2:#0f7a37;--ac:#f97316;--bd:#e2e8e0;--cd:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1511;--bg2:#141d18;--tx:#eaf2ec;--mu:#9bb0a3;--bd:#24332b;--cd:#18231d}}
+:root[data-theme="dark"]{--bg:#0e1511;--bg2:#141d18;--tx:#eaf2ec;--mu:#9bb0a3;--bd:#24332b;--cd:#18231d}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+.w{max-width:1100px;margin:auto;padding:0 16px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--bd)}
+header .w{display:flex;align-items:center;gap:10px;height:60px}
+.logo{font-weight:800;font-size:20px;color:var(--pr);flex:1}.logo span{color:var(--ac)}
+nav a{color:var(--tx);text-decoration:none;font-size:14px;margin:0 8px}
+@media(max-width:760px){nav{display:none}}
+button,.btn{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 16px;background:var(--pr);color:#fff;font-weight:600;text-decoration:none;display:inline-block}
+.btn2{background:var(--bg2);color:var(--tx);border:1px solid var(--bd)}.wa{background:#25d366}.ac{background:var(--ac)}
+.ib{background:var(--bg2);color:var(--tx);padding:8px 12px;position:relative}
+.bd{position:absolute;top:-6px;right:-6px;background:var(--ac);color:#fff;border-radius:99px;font-size:11px;padding:1px 6px}
+.hero{background:linear-gradient(135deg,#0f7a37,#16a34a 60%,#f97316);color:#fff;padding:48px 0}
+.hero .w{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+.hero h1{font-size:clamp(28px,6vw,48px);line-height:1.1;margin-bottom:12px}.hero p{opacity:.95;margin-bottom:18px}
+.hero .art{font-size:clamp(90px,20vw,170px);text-align:center;filter:drop-shadow(0 10px 20px #0004)}
+.hero .btn{margin:0 8px 8px 0}
+@media(max-width:700px){.hero .w{grid-template-columns:1fr}.hero .art{display:none}}
+.tr{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:-22px auto 0;position:relative}
+.tr div{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px;text-align:center;font-size:13px;font-weight:600;box-shadow:0 4px 14px #0001}
+@media(max-width:600px){.tr{grid-template-columns:repeat(2,1fr)}}
+section{padding:44px 0}.alt{background:var(--bg2)}
+h2{font-size:26px;margin-bottom:6px}.sub{color:var(--mu);margin-bottom:20px}
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:14px}
+.cats button{background:var(--bg2);color:var(--tx);border:1px solid var(--bd);white-space:nowrap}.cats button.on{background:var(--pr);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+@media(max-width:480px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pi{height:130px;display:grid;place-items:center;font-size:62px;position:relative}
+.tag{position:absolute;top:8px;left:8px;background:var(--ac);color:#fff;font-size:11px;padding:2px 8px;border-radius:99px;font-weight:700}
+.pb{padding:12px;display:flex;flex-direction:column;gap:4px;flex:1}.pb small{color:var(--mu)}.pb b{font-size:14px}
+.pr{display:flex;align-items:baseline;gap:6px;margin-top:auto}.pr strong{font-size:18px;color:var(--pr)}.pr s{color:var(--mu);font-size:12px}
+.card button{margin:0 12px 12px;padding:9px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.box{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.box h3{margin-bottom:6px}.box p{color:var(--mu);font-size:14px}.big{font-size:30px}
+.ov{position:fixed;inset:0;background:#0007;z-index:40;display:none}.ov.on{display:block}
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg);z-index:50;transform:translateX(100%);transition:.25s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+.dr.on{transform:none}.dh{padding:14px 16px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.db{flex:1;overflow:auto;padding:14px 16px}.df{padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--bd)}
+.ci{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd);font-size:14px}.ci span:first-child{font-size:28px}.ci div{flex:1}
+.q button{padding:2px 9px;background:var(--bg2);color:var(--tx)}
+input,select,textarea{font:inherit;width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);margin:4px 0 8px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.tabs button{background:var(--bg2);color:var(--tx)}.tabs .on{background:var(--pr);color:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:8px;border-bottom:1px solid var(--bd);text-align:left}
+.sc{overflow-x:auto}.st{padding:2px 8px;border-radius:99px;font-size:11px;background:#fde68a;color:#78350f}.st.d{background:#bbf7d0;color:#14532d}
+.fl{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;padding:0;font-size:26px;box-shadow:0 6px 18px #0004}
+#lg{width:auto;margin:0;padding:8px 6px;border-radius:10px;font-weight:600;font-size:13px;background:var(--bg2)}
+footer{background:#0b1a12;color:#cfe3d6;padding:30px 0 80px;font-size:14px}footer a{color:#86efac}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#111;color:#fff;padding:10px 16px;border-radius:99px;z-index:60;display:none;font-size:14px}
+</style></head><body>
+<header><div class="w"><div class="logo">All <span>Nutrition</span></div>
+<nav><a href="#shop">Shop</a><a href="#why">Why Us</a><a href="#community">Community</a><a href="#visit">Visit</a></nav>
+<button class="ib" onclick="op('acc')">👤</button><button class="ib" onclick="op('cart')">🛒<span class="bd" id="cc">0</span></button><select id="lg" onchange="sl(this.value)" aria-label="Language"><option value="en">English</option><option value="mr">मराठी</option><option value="hi">हिन्दी</option></select></div></header>
+
+<div class="hero"><div class="w"><div><h1>Real Nutrition. Real Results.</h1>
+<p>Protein, gainers, vitamins, health foods &amp; fitness supplements — genuine products, fair prices, right here in Georai, Newasa.</p>
+<a class="btn ac" href="#shop">Shop Now</a><a class="btn wa" href="https://wa.me/919960842249?text=Hello%20All%20Nutrition" target="_blank" rel="noopener">WhatsApp Us</a></div>
+<div class="art">💪</div></div></div>
+
+<div class="w"><div class="tr"><div>✅ 100% Genuine</div><div>🚚 Local Delivery</div><div>💬 Free Diet Guidance</div><div>💵 Cash on Delivery</div></div></div>
+
+<section id="shop"><div class="w"><h2>Our Products</h2><p class="sub">Sample catalogue — prices are demo values</p>
+<div class="cats" id="cats"></div><div class="grid" id="grid"></div></div></section>
+
+<section class="alt" id="why"><div class="w"><h2>Why All Nutrition?</h2><p class="sub">Trusted nutrition store for fitness lovers &amp; families</p>
+<div class="cols"><div class="box"><div class="big">🛡️</div><h3>Authentic Products</h3><p>Sealed, batch-verified supplements from trusted brands.</p></div>
+<div class="box"><div class="big">🥗</div><h3>Free Diet Advice</h3><p>Get simple guidance on protein, weight gain &amp; weight loss.</p></div>
+<div class="box"><div class="big">💰</div><h3>Best Local Price</h3><p>Fair MRP-based pricing with festival offers.</p></div>
+<div class="box"><div class="big">🚚</div><h3>Fast Local Delivery</h3><p>Georai, Newasa &amp; nearby villages.</p></div></div></div></section>
+
+<section id="community"><div class="w"><div class="box" style="text-align:center;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:0">
+<div class="big">💬</div><h2>Join Our WhatsApp Community</h2><p style="color:#fff;opacity:.95;margin:6px 0 14px">Daily fitness tips, new stock alerts, offers &amp; diet guidance.</p>
+<a class="btn" style="background:#fff;color:#128c7e" href="https://wa.me/919960842249?text=Please%20add%20me%20to%20All%20Nutrition%20WhatsApp%20Community" target="_blank" rel="noopener">Join Community</a></div></div></section>
+
+<section class="alt" id="visit"><div class="w"><h2>Visit Our Shop</h2><p class="sub">We are happy to help you choose the right product</p>
+<div class="cols"><div class="box"><h3>📍 Address</h3><p>All Nutrition<br>At-Post Georai, Tal. Newasa,<br>Dist. Ahilyanagar, Maharashtra</p><br>
+<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Georai+Newasa+Ahilyanagar+Maharashtra">Open in Google Maps</a></div>
+<div class="box"><h3>📞 Contact</h3><p>Mobile: <b>9960842249</b></p><br><a class="btn btn2" href="tel:+919960842249">Call Now</a> <a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/919960842249">WhatsApp</a></div>
+<div class="box"><h3>🕘 Timing</h3><p>Mon – Sun<br>9:00 AM – 9:00 PM</p></div></div></div></section>
+
+<footer><div class="w">© All Nutrition, Georai · Tal. Newasa · Dist. Ahilyanagar · 📞 9960842249<br>Demo website · <a href="#" onclick="op('adm');return false">Admin Login</a></div></footer>
+<button class="fl wa" onclick="window.open('https://wa.me/919960842249')" aria-label="WhatsApp">💬</button>
+<div class="ov" id="ov" onclick="cl()"></div><div class="toast" id="ts"></div>
+
+<div class="dr" id="cart"><div class="dh">🛒 Your Cart<button class="ib" onclick="cl()">✕</button></div><div class="db" id="cb"></div>
+<div class="df"><div style="display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px"><span>Total</span><span id="tt"></span></div>
+<input id="on" placeholder="Your name"><input id="op" placeholder="Mobile number" inputmode="tel"><textarea id="oa" rows="2" placeholder="Delivery address"></textarea>
+<button class="ac" style="width:100%;margin-bottom:8px" onclick="ord()">Place Order (Cash on Delivery)</button>
+<button class="wa" style="width:100%" onclick="waOrd()">Order on WhatsApp</button></div></div>
+
+<div class="dr" id="acc"><div class="dh">👤 My Account<button class="ib" onclick="cl()">✕</button></div><div class="db" id="ab"></div></div>
+
+<div class="dr" id="adm" style="width:min(720px,100%)"><div class="dh">🔐 Admin Panel<button class="ib" onclick="cl()">✕</button></div><div class="db" id="mb"></div></div>
+
+<script>
+var CATS=["All","Protein","Gainers","Vitamins","Pre/Post Workout","Health Foods"];
+var DEF=[
+{n:"Whey Protein 1kg",c:"Protein",p:2499,m:3199,e:"🥛",t:"Best Seller",b:"#dcfce7"},
+{n:"Whey Isolate 1kg",c:"Protein",p:3899,m:4799,e:"💪",t:"Premium",b:"#e0f2fe"},
+{n:"Plant Protein 500g",c:"Protein",p:1499,m:1899,e:"🌱",t:"Vegan",b:"#ecfccb"},
+{n:"Mass Gainer 3kg",c:"Gainers",p:2199,m:2799,e:"🏋️",t:"Hot",b:"#fed7aa"},
+{n:"Weight Gainer 1kg",c:"Gainers",p:899,m:1199,e:"🍌",t:"",b:"#fef3c7"},
+{n:"Multivitamin 60 Tabs",c:"Vitamins",p:549,m:799,e:"💊",t:"",b:"#fce7f3"},
+{n:"Omega-3 Fish Oil",c:"Vitamins",p:649,m:899,e:"🐟",t:"Popular",b:"#e0f2fe"},
+{n:"Vitamin D3 + K2",c:"Vitamins",p:449,m:649,e:"☀️",t:"",b:"#fef9c3"},
+{n:"Creatine Monohydrate 250g",c:"Pre/Post Workout",p:999,m:1399,e:"⚡",t:"Best Seller",b:"#ede9fe"},
+{n:"Pre-Workout 300g",c:"Pre/Post Workout",p:1399,m:1899,e:"🔥",t:"",b:"#fee2e2"},
+{n:"BCAA 250g",c:"Pre/Post Workout",p:1199,m:1599,e:"💧",t:"",b:"#cffafe"},
+{n:"Peanut Butter 1kg",c:"Health Foods",p:349,m:499,e:"🥜",t:"",b:"#fde68a"},
+{n:"Oats 1kg",c:"Health Foods",p:189,m:249,e:"🌾",t:"",b:"#ecfccb"},
+{n:"Green Tea 100 Bags",c:"Health Foods",p:299,m:399,e:"🍵",t:"",b:"#d1fae5"},
+{n:"Protein Bars (Box of 6)",c:"Health Foods",p:599,m:749,e:"🍫",t:"New",b:"#fecaca"},
+{n:"Shaker Bottle 700ml",c:"Pre/Post Workout",p:249,m:399,e:"🥤",t:"",b:"#e2e8f0"}];
+function ld(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var P=ld("an_p",DEF),C=ld("an_c",{}),O=ld("an_o",[]),U=ld("an_u",null),ct="All",adm=false;
+function $(i){return document.getElementById(i)}
+function ts(m){var t=$("ts");t.textContent=m;t.style.display="block";setTimeout(function(){t.style.display="none"},1800)}
+function rs(){$("cats").innerHTML=CATS.map(function(c){return '<button class="'+(c==ct?"on":"")+'" onclick="ct=\''+c+'\';rs()">'+c+'</button>'}).join("");
+$("grid").innerHTML=P.map(function(x,i){if(ct!="All"&&x.c!=ct)return"";
+return '<div class="card"><div class="pi" style="background:'+x.b+'">'+(x.t?'<span class="tag">'+x.t+'</span>':"")+x.e+'</div><div class="pb"><small>'+x.c+'</small><b>'+x.n+'</b><div class="pr"><strong>₹'+x.p+'</strong><s>₹'+x.m+'</s></div></div><button onclick="add('+i+')">Add to Cart</button></div>'}).join("")}
+function add(i){C[i]=(C[i]||0)+1;sv("an_c",C);rc();ts("Added to cart")}
+function ch(i,d){C[i]=(C[i]||0)+d;if(C[i]<=0)delete C[i];sv("an_c",C);rc()}
+function tot(){var s=0;for(var i in C)if(P[i])s+=P[i].p*C[i];return s}
+function rc(){var n=0,h="";for(var i in C){if(!P[i])continue;n+=C[i];h+='<div class="ci"><span>'+P[i].e+'</span><div><b>'+P[i].n+'</b><br>₹'+P[i].p+'</div><span class="q"><button onclick="ch('+i+',-1)">−</button> '+C[i]+' <button onclick="ch('+i+',1)">+</button></span></div>'}
+$("cc").textContent=n;$("cb").innerHTML=h||'<p style="text-align:center;color:var(--mu);margin-top:40px">Cart is empty</p>';$("tt").textContent="₹"+tot()}
+function lines(){var s="";for(var i in C)if(P[i])s+="• "+P[i].n+" x"+C[i]+" = ₹"+P[i].p*C[i]+"\n";return s}
+function ord(){if(!tot())return ts("Cart is empty");var n=$("on").value,p=$("op").value,a=$("oa").value;if(!n||!p||!a)return ts("Fill name, mobile, address");
+O.unshift({id:"AN"+Date.now().toString().slice(-6),n:n,p:p,a:a,t:tot(),l:lines(),s:"Pending",d:new Date().toLocaleDateString()});sv("an_o",O);C={};sv("an_c",C);rc();rs();cl();ts("Order placed! ✅")}
+function waOrd(){if(!tot())return ts("Cart is empty");var m="Hello All Nutrition, I want to order:\n"+lines()+"Total: ₹"+tot()+"\nName: "+$("on").value+"\nAddress: "+$("oa").value;window.open("https://wa.me/919960842249?text="+encodeURIComponent(m))}
+function op(id){cl();if(id=="acc")ra();if(id=="adm")rm();if(id=="cart")rc();$("ov").classList.add("on");$(id).classList.add("on")}
+function cl(){["cart","acc","adm","ov"].forEach(function(i){$(i).classList.remove("on")})}
+function ra(){if(!U){$("ab").innerHTML='<h3>Login / Register</h3><p style="color:var(--mu);font-size:14px">Demo login — no password needed.</p><input id="un" placeholder="Name"><input id="up" placeholder="Mobile number" inputmode="tel"><button style="width:100%" onclick="lg()">Continue</button>';return}
+var m=O.filter(function(o){return o.p==U.p});$("ab").innerHTML='<h3>Hello, '+U.n+' 👋</h3><p style="color:var(--mu);font-size:14px">📞 '+U.p+'</p><br><h3>My Orders</h3>'+(m.length?m.map(function(o){return '<div class="box" style="margin:8px 0"><b>#'+o.id+'</b> <span class="st '+(o.s=="Delivered"?"d":"")+'">'+o.s+'</span><br><small>'+o.d+' · ₹'+o.t+'</small><pre style="font:inherit;font-size:13px;white-space:pre-wrap">'+o.l+'</pre></div>'}).join(""):'<p style="color:var(--mu)">No orders yet.</p>')+'<br><button class="btn2" onclick="U=null;sv(\'an_u\',null);ra()">Logout</button>'}
+function lg(){var n=$("un").value,p=$("up").value;if(!n||!p)return ts("Enter name & mobile");U={n:n,p:p};sv("an_u",U);ra()}
+function rm(){if(!adm){$("mb").innerHTML='<p style="color:var(--mu);font-size:14px">Demo password: <b>admin123</b></p><input id="ap" type="password" placeholder="Password"><button style="width:100%" onclick="if($(\'ap\').value==\'admin123\'){adm=true;rm()}else ts(\'Wrong password\')">Login</button>';return}
+var rev=O.reduce(function(s,o){return s+o.t},0);
+$("mb").innerHTML='<div class="cols" style="margin-bottom:14px"><div class="box"><div class="big">'+O.length+'</div><p>Orders</p></div><div class="box"><div class="big">₹'+rev+'</div><p>Revenue</p></div><div class="box"><div class="big">'+P.length+'</div><p>Products</p></div></div>'
++'<h3>Orders</h3><div class="sc"><table><tr><th>ID</th><th>Customer</th><th>Total</th><th>Status</th><th></th></tr>'+(O.map(function(o,i){return '<tr><td>'+o.id+'</td><td>'+o.n+'<br><small>'+o.p+'</small></td><td>₹'+o.t+'</td><td><span class="st '+(o.s=="Delivered"?"d":"")+'">'+o.s+'</span></td><td><button style="padding:4px 8px" onclick="O['+i+'].s=O['+i+'].s==\'Delivered\'?\'Pending\':\'Delivered\';sv(\'an_o\',O);rm()">Toggle</button></td></tr>'}).join("")||'<tr><td colspan=5>No orders yet</td></tr>')+'</table></div>'
++'<br><h3>Add Product</h3><input id="pn" placeholder="Product name"><select id="pc">'+CATS.slice(1).map(function(c){return '<option>'+c+'</option>'}).join("")+'</select><input id="pp" placeholder="Price ₹" type="number"><input id="pm" placeholder="MRP ₹" type="number"><button onclick="ap()">Add Product</button>'
++'<br><br><h3>Products</h3><div class="sc"><table>'+P.map(function(x,i){return '<tr><td>'+x.e+' '+x.n+'</td><td>₹'+x.p+'</td><td><button class="ac" style="padding:4px 8px" onclick="P.splice('+i+',1);C={};sv(\'an_c\',C);sv(\'an_p\',P);rs();rm()">Delete</button></td></tr>'}).join("")+'</table></div><br><button class="btn2" onclick="adm=false;rm()">Logout</button>'}
+function ap(){var n=$("pn").value,p=+$("pp").value;if(!n||!p)return ts("Enter name & price");P.push({n:n,c:$("pc").value,p:p,m:+$("pm").value||p,e:"🆕",t:"New",b:"#e0f2fe"});sv("an_p",P);rs();rm();ts("Product added")}
+rs();rc();
+var TR={
+"Shop":"दुकान|दुकान","Why Us":"आम्हीच का?|हम ही क्यों?","Community":"कम्युनिटी|कम्युनिटी","Visit":"भेट द्या|आइए",
+"Real Nutrition. Real Results.":"खरे पोषण. खरे रिझल्ट.|असली पोषण. असली रिज़ल्ट.",
+"Protein, gainers, vitamins, health foods & fitness supplements — genuine products, fair prices, right here in Georai, Newasa.":"प्रोटीन, गेनर, व्हिटॅमिन, हेल्थ फूड्स आणि फिटनेस सप्लिमेंट्स — अस्सल प्रोडक्ट्स, योग्य किंमत, आता गेवराई, नेवासा येथेच.|प्रोटीन, गेनर, विटामिन, हेल्थ फूड्स और फिटनेस सप्लीमेंट्स — असली प्रोडक्ट्स, सही दाम, अब गेवराई, नेवासा में ही.",
+"Shop Now":"आत्ता खरेदी करा|अभी खरीदें","WhatsApp Us":"व्हॉट्सॲपवर संपर्क करा|व्हॉट्सऐप पर संपर्क करें",
+"✅ 100% Genuine":"✅ १००% अस्सल|✅ 100% असली","🚚 Local Delivery":"🚚 लोकल डिलिव्हरी|🚚 लोकल डिलीवरी","💬 Free Diet Guidance":"💬 मोफत डाएट मार्गदर्शन|💬 मुफ़्त डाइट सलाह","💵 Cash on Delivery":"💵 कॅश ऑन डिलिव्हरी|💵 कैश ऑन डिलीवरी",
+"Our Products":"आमचे प्रोडक्ट्स|हमारे प्रोडक्ट्स","Sample catalogue — prices are demo values":"नमुना कॅटलॉग — किमती डेमो आहेत|नमूना कैटलॉग — कीमतें डेमो हैं",
+"All":"सर्व|सभी","Protein":"प्रोटीन","Gainers":"गेनर्स","Vitamins":"व्हिटॅमिन्स|विटामिन्स","Pre/Post Workout":"प्री/पोस्ट वर्कआउट","Health Foods":"हेल्थ फूड्स",
+"Add to Cart":"कार्टमध्ये टाका|कार्ट में डालें",
+"Best Seller":"बेस्ट सेलर","Premium":"प्रीमियम","Vegan":"व्हेगन|वीगन","Hot":"हॉट","Popular":"लोकप्रिय","New":"नवीन|नया",
+"Whey Protein 1kg":"व्हे प्रोटीन १ किलो|व्हे प्रोटीन 1 किलो","Whey Isolate 1kg":"व्हे आयसोलेट १ किलो|व्हे आइसोलेट 1 किलो","Plant Protein 500g":"प्लांट प्रोटीन ५०० ग्रॅम|प्लांट प्रोटीन 500 ग्राम","Mass Gainer 3kg":"मास गेनर ३ किलो|मास गेनर 3 किलो","Weight Gainer 1kg":"वेट गेनर १ किलो|वेट गेनर 1 किलो","Multivitamin 60 Tabs":"मल्टीव्हिटॅमिन ६० गोळ्या|मल्टीविटामिन 60 टैबलेट","Omega-3 Fish Oil":"ओमेगा-३ फिश ऑइल|ओमेगा-3 फिश ऑयल","Vitamin D3 + K2":"व्हिटॅमिन D3 + K2|विटामिन D3 + K2","Creatine Monohydrate 250g":"क्रिएटिन मोनोहायड्रेट २५० ग्रॅम|क्रिएटिन मोनोहाइड्रेट 250 ग्राम","Pre-Workout 300g":"प्री-वर्कआउट ३०० ग्रॅम|प्री-वर्कआउट 300 ग्राम","BCAA 250g":"बीसीएए २५० ग्रॅम|बीसीएए 250 ग्राम","Peanut Butter 1kg":"पीनट बटर १ किलो|पीनट बटर 1 किलो","Oats 1kg":"ओट्स १ किलो|ओट्स 1 किलो","Green Tea 100 Bags":"ग्रीन टी १०० बॅग्स|ग्रीन टी 100 बैग","Protein Bars (Box of 6)":"प्रोटीन बार (६ चा बॉक्स)|प्रोटीन बार (6 का बॉक्स)","Shaker Bottle 700ml":"शेकर बॉटल ७०० मिली|शेकर बोतल 700 मिली",
+"Why All Nutrition?":"ऑल न्यूट्रिशनच का?|ऑल न्यूट्रिशन ही क्यों?","Trusted nutrition store for fitness lovers & families":"फिटनेस प्रेमी आणि कुटुंबांसाठी विश्वासू न्यूट्रिशन स्टोअर|फिटनेस प्रेमियों और परिवारों के लिए भरोसेमंद न्यूट्रिशन स्टोर",
+"Authentic Products":"अस्सल प्रोडक्ट्स|असली प्रोडक्ट्स","Sealed, batch-verified supplements from trusted brands.":"विश्वासू ब्रँड्सचे सीलबंद, बॅच-तपासलेले सप्लिमेंट्स.|भरोसेमंद ब्रांड्स के सीलबंद, बैच-जांचे सप्लीमेंट्स.",
+"Free Diet Advice":"मोफत डाएट सल्ला|मुफ़्त डाइट सलाह","Get simple guidance on protein, weight gain & weight loss.":"प्रोटीन, वजन वाढवणे व कमी करणे यावर सोपे मार्गदर्शन मिळवा.|प्रोटीन, वज़न बढ़ाने और घटाने पर आसान सलाह पाएं.",
+"Best Local Price":"स्थानिक बेस्ट किंमत|लोकल बेस्ट कीमत","Fair MRP-based pricing with festival offers.":"MRP नुसार योग्य किंमत आणि सणासुदीच्या ऑफर्स.|MRP के अनुसार सही दाम और त्योहार ऑफर.",
+"Fast Local Delivery":"जलद लोकल डिलिव्हरी|तेज़ लोकल डिलीवरी","Georai, Newasa & nearby villages.":"गेवराई, नेवासा आणि जवळची गावे.|गेवराई, नेवासा और आसपास के गांव.",
+"Join Our WhatsApp Community":"आमच्या व्हॉट्सॲप कम्युनिटीत सामील व्हा|हमारी व्हाट्सऐप कम्युनिटी से जुड़ें","Daily fitness tips, new stock alerts, offers & diet guidance.":"रोज फिटनेस टिप्स, नवीन स्टॉक अलर्ट, ऑफर्स आणि डाएट मार्गदर्शन.|रोज़ फिटनेस टिप्स, नया स्टॉक अलर्ट, ऑफर और डाइट सलाह.","Join Community":"कम्युनिटीत सामील व्हा|कम्युनिटी जॉइन करें",
+"Visit Our Shop":"आमच्या दुकानाला भेट द्या|हमारी दुकान पर आइए","We are happy to help you choose the right product":"योग्य प्रोडक्ट निवडण्यात मदत करायला आम्हाला आनंद होईल|सही प्रोडक्ट चुनने में आपकी मदद करके हमें खुशी होगी",
+"📍 Address":"📍 पत्ता|📍 पता","At-Post Georai, Tal. Newasa,":"मु.पो. गेवराई, ता. नेवासा,|ग्राम पोस्ट गेवराई, तहसील नेवासा,","Dist. Ahilyanagar, Maharashtra":"जि. अहिल्यानगर, महाराष्ट्र|जिला अहिल्यानगर, महाराष्ट्र",
+"Open in Google Maps":"गुगल मॅपवर उघडा|गूगल मैप में खोलें","📞 Contact":"📞 संपर्क","Mobile:":"मोबाईल:|मोबाइल:","Call Now":"आत्ता कॉल करा|अभी कॉल करें","WhatsApp":"व्हॉट्सॲप|व्हाट्सऐप","🕘 Timing":"🕘 वेळ|🕘 समय","Mon – Sun":"सोम – रवि|सोम – रवि","9:00 AM – 9:00 PM":"सकाळी ९:०० – रात्री ९:००|सुबह 9:00 – रात 9:00",
+"Admin Login":"अ‍ॅडमिन लॉगिन|एडमिन लॉगिन",
+"🛒 Your Cart":"🛒 तुमचा कार्ट|🛒 आपकी कार्ट","Total":"एकूण|कुल","Place Order (Cash on Delivery)":"ऑर्डर करा (कॅश ऑन डिलिव्हरी)|ऑर्डर करें (कैश ऑन डिलीवरी)","Order on WhatsApp":"व्हॉट्सॲपवर ऑर्डर करा|व्हाट्सऐप पर ऑर्डर करें","Cart is empty":"कार्ट रिकामा आहे|कार्ट खाली है",
+"Your name":"तुमचे नाव|आपका नाम","Mobile number":"मोबाईल नंबर|मोबाइल नंबर","Delivery address":"डिलिव्हरीचा पत्ता|डिलीवरी का पता","Name":"नाव|नाम",
+"👤 My Account":"👤 माझे खाते|👤 मेरा खाता","Login / Register":"लॉगिन / नोंदणी|लॉगिन / रजिस्टर","Demo login — no password needed.":"डेमो लॉगिन — पासवर्ड नको.|डेमो लॉगिन — पासवर्ड नहीं चाहिए.","Continue":"पुढे चला|आगे बढ़ें","My Orders":"माझ्या ऑर्डर्स|मेरे ऑर्डर","No orders yet.":"अजून ऑर्डर नाही.|अभी तक कोई ऑर्डर नहीं.","Logout":"लॉगआउट","Pending":"प्रलंबित|लंबित","Delivered":"डिलिव्हर झाले|डिलीवर हुआ",
+"Added to cart":"कार्टमध्ये टाकले|कार्ट में डाला","Order placed! ✅":"ऑर्डर झाली! ✅|ऑर्डर हो गया! ✅","Fill name, mobile, address":"नाव, मोबाईल, पत्ता भरा|नाम, मोबाइल, पता भरें","Enter name & mobile":"नाव व मोबाईल टाका|नाम और मोबाइल डालें"};
+var L=ld("an_l","en"),OR=new WeakMap();
+function tv(t){var v=TR[t];if(!v)return null;v=v.split("|");return L=="hi"?(v[1]||v[0]):v[0]}
+function ap2(r){var w=document.createTreeWalker(r,NodeFilter.SHOW_TEXT),n,p;while(n=w.nextNode()){p=n.parentNode.nodeName;if(p=="SCRIPT"||p=="STYLE")continue;var o=OR.get(n);if(o===undefined){o=n.nodeValue;OR.set(n,o)}var t=o.trim();if(!t)continue;var x=t;if(L!="en"){x=tv(t)||x;if(x==t&&t.indexOf("Hello, ")==0)x=(L=="mr"?"नमस्कार, ":"नमस्ते, ")+t.slice(7)}n.nodeValue=o.replace(t,function(){return x})}
+r.querySelectorAll("[placeholder]").forEach(function(e){if(!e.dataset.o)e.dataset.o=e.placeholder;e.placeholder=(L=="en"?null:tv(e.dataset.o))||e.dataset.o})}
+function sl(v){L=v;sv("an_l",v);document.documentElement.lang=v;ap2(document.body)}
+$("lg").value=L;document.documentElement.lang=L;
+new MutationObserver(function(){ap2(document.body)}).observe(document.body,{childList:true,subtree:true});
+ap2(document.body);
+</script></body></html>
